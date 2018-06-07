@@ -80,11 +80,13 @@ class ntp::config {
   }
 
   if $ntp::logfile {
-    file { $ntp::logfile:
-      ensure => file,
-      owner  => 'ntp',
-      group  => 'ntp',
-      mode   => '0664',
+    if $ntp::logfile_manage {
+      file { $ntp::logfile:
+        ensure => file,
+        owner  => 'ntp',
+        group  => 'ntp',
+        mode   => '0664',
+      }
     }
   }
 

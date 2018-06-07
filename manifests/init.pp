@@ -80,6 +80,9 @@
 # @param logfile
 #   Specifies a log file for NTP to use instead of syslog. Default value: ' '.
 #
+# @param logfile_manage
+#   Specifies whether or not the logfile should be managed with a file resource. Defaults to true
+#
 # @param minpoll
 #   Sets Puppet to non-standard minimal poll interval of upstream servers.
 #   Values: 3 to 16. Default: undef.
@@ -222,6 +225,7 @@ class ntp (
   Stdlib::Absolutepath $driftfile,
   Optional[Stdlib::Absolutepath] $leapfile,
   Optional[Stdlib::Absolutepath] $logfile,
+  Optional[Boolean] $logfile_manage,
   Boolean $iburst_enable,
   Array[String] $keys,
   Boolean $keys_enable,

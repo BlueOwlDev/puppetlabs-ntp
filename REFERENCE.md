@@ -178,6 +178,12 @@ Data type: `Optional[Stdlib::Absolutepath]`
 
 Specifies a log file for NTP to use instead of syslog. Default value: ' '.
 
+##### 'logfile_manage`
+
+Data type: `Optional[Boolean]`
+
+Specifies whether or not the logfile should be managed with a file resource. Defaults to true
+
 ##### `minpoll`
 
 Data type: `Optional[Ntp::Poll_interval]`

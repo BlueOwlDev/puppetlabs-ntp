@@ -24,6 +24,7 @@ ntp::keys_trusted: []
 ntp::keys: []
 ntp::leapfile: ~
 ntp::logfile: ~
+ntp::logfile_manage: true
 ntp::ntpsigndsocket: ~
 ntp::maxpoll: ~
 ntp::minpoll: ~
