@@ -1,5 +1,8 @@
+# @summary
+#   This class handles the configuration file.
+#
 # @api private
-# This class handles the configuration file. Avoid modifying private classes.
+#
 class ntp::config {
 
   #The servers-netconfig file overrides NTP config on SLES 12, interfering with our configuration.
@@ -77,11 +80,13 @@ class ntp::config {
   }
 
   if $ntp::logfile {
-    file { $ntp::logfile:
-      ensure => file,
-      owner  => 'ntp',
-      group  => 'ntp',
-      mode   => '0664',
+    if $ntp::logfile_manage {
+      file { $ntp::logfile:
+        ensure => file,
+        owner  => 'ntp',
+        group  => 'ntp',
+        mode   => '0664',
+      }
     }
   }
 
